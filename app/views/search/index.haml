@@ -1,0 +1,9 @@
+%p= @recent_search.blank? ? 'No searches recently' : "Most recently searched for SoundCloud users"
+%ul
+	= render :partial => 'recent_search', :collection => @recent_searches
+= form_for :search do |f|
+	%p
+		= f.label :artist
+		= f.text_field :term
+	%p
+	= f.submit :search

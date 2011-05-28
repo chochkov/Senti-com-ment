@@ -1,7 +1,7 @@
 Speak::Application.routes.draw do
 
-  match "speak" => "speak#index"
-  match "login" => "login#login"
+  get  "search"  => "search#index"
+  post "search"  => "search#post"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

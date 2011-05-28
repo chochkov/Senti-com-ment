@@ -8,12 +8,9 @@
 		!= javascript_include_tag :defaults
 		!= csrf_meta_tag
 		!= javascript_include_tag "jquery-1.6.1.min.js"
-		%script
-			$(document).ready(get_sentiment())
-
 %body
-	.header.centered
-		%p progressive <strong>file receiver</strong> (<span id='files_total_count_span'></span> files)
-	.main.layout.centered
+	#header.layout
+		%p Sentiment for Comments
+	#main.layout
 		= yield
-	.footer.layout.centered
+	#footer.layout
