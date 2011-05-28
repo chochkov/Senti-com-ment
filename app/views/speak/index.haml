@@ -1,0 +1,8 @@
+%h3 Speak on your language
+%h6 but first see the two hottest songs !
+= render :partial => 'tracks', :collection => @tracks, :as => :track
+= form_for :login, :url => '/login' do |f|
+	= f.label :email
+	= f.text_field :username
+	= f.password_field :password
+	= f.submit :login
