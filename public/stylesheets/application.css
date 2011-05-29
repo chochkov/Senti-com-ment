@@ -1,25 +1,25 @@
-body         { margin: 0; font-family: Arial,Verdana; }
-a            { text-decoration: none; }
-p            { margin: 0; }
-label        { font-size: .9em; color: #333; }
-#header      { height: 43px; background: #555; padding: 10px 0 0; text-align: center; }
-#main        { text-align: center; background: #CBFFFF; padding: 20px 0 45px; }
-#footer      { background: #888; height: 22px; padding-top: 5px; }
-.layout      { width:800px; margin:auto; }
-input        { height:23px;margin-top:25px; }
-input.text   { font-size:16px;padding:3px 6px;width:310 }
-input.submit { width:10px; }
-.header p    { color:#fff; font-size:23px; padding:0; }
-ul           { padding-left: 0px; }
-ul li        { list-style:none; margin-left:0px; }
+body            { margin: 0; font-family: Arial,Verdana; }
+a               { text-decoration: none; }
+p               { margin: 0; }
+label           { font-size: .9em; color: #333; }
+#header         { height: 63px; background: #555; padding: 10px 0 0; text-align: center; }
+#main           { text-align: center; background: #CBFFFF; padding: 20px 0 45px; }
+#footer         { background: #888; height: 22px; padding-top: 5px; }
+.layout         { width:800px; margin:auto; }
+input           { height:23px;margin-top:25px; }
+input.text      { font-size:16px;padding:3px 6px;width:310 }
+input.submit    { width:10px; }
+ul              { padding-left: 0px; }
+ul li           { list-style:none; margin-left:0px; }
+                
+p.teaser        { font-size: .8em; color: #ccc; margin: 5px;}
+.meta a         { color: #555; }
+.username       { font-weight: bold; }
+.sentiment      { color: red; }
+.track          { width: 780px; height: 40px; padding: 5px 10px;}
+.track:hover    { background:#fafafa; }
 
-.meta a      { color: #555; }
-.username    { font-weight: bold; }
-.sentiment   { color: red; }
-.track       { width: 780px; height: 40px; padding: 5px 10px;}
-.track:hover { background:#fafafa; }
-
-#header p    { color: white; font-weight:bolder; font-size: 1.6em; }
-#footer p    { color: #ccc; font-size: 0.8em; text-align: center; }
-#footer p a  { color: #ccc; }
+#header p.title { color: white; font-weight:bolder; font-size: 1.6em; }
+#footer p       { color: #ccc; font-size: 0.8em; text-align: center; }
+#footer p a     { color: #ccc; }
 #footer p a:hover { color: #fff; }
