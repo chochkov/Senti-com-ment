@@ -18,7 +18,7 @@ jQuery(function($) {
 			jQuery('#tracks').append('<div class = "track"><p class = "meta"><a href = "' +tracks[i].permalink_url + '">' + tracks[i].title + ' by <span class="username">' + tracks[i].user.username + '</span></a></p><p class="sentiment"></p>');
 			SC.get('/tracks/' + tracks[i].id + '/comments', function(comments){
 				for(j = 0; j < comments.length; j++){
-					var body = comments[j].body.replace(/@\w+:/, '');
+					var body = comments[j].body.replace(/@(\w|-)+:/, '');
 					if(body.length < 10){ continue; }
 					jQuery.post('http://apib2.semetric.com/sentiment?token=' + musicMetricId, body, function(result){
 						scores.push(result.response.score);
