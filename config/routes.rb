@@ -1,7 +1,6 @@
 Speak::Application.routes.draw do
 
-  get  "search"  => "search#index"
-  post "search"  => "search#post"
+  get "/search" => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
