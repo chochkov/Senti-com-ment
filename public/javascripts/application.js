@@ -12,21 +12,21 @@ function mean(array){
 
 jQuery(function($) {
 	SC.initialize({ client_id: soundCloudId });
-	SC.get('/tracks?limit=1&order=hotness', function(tracks){
-		for(i = 0; i < tracks.length; i++){
-			scores = [];
-			jQuery('#tracks').append('<div class = "track"><p class = "meta"><a href = "' +tracks[i].permalink_url + '">' + tracks[i].title + ' by <span class="username">' + tracks[i].user.username + '</span></a></p><p class="sentiment"></p>');
-			SC.get('/tracks/' + tracks[i].id + '/comments', function(comments){
-				for(j = 0; j < comments.length; j++){
-					var body = comments[j].body.replace(/@(\w|-)+:/, '');
-					if(body.length < 10){ continue; }
-					jQuery.post('http://apib2.semetric.com/sentiment?token=' + musicMetricId, body, function(result){
-						scores.push(result.response.score);
-						$('p.sentiment').html('Sentiment score ' + mean(scores) + ' from ' + scores.length + ' comments');
-					});
-				};
-			});
-			jQuery('#tracks').append('</div>');
-		};
+	SC.get('/tracks?limit=1&order=hotness', function(track){
+		track = track.first();
+		jQuery('#tracks').append('<div class = "track"><p class = "meta"><a href = "' + track.permalink_url + '">' + track.title + ' by <span class="username">' + track.user.username + '</span></a></p><p class="sentiment"></p>');
+		SC.get('/tracks/' + track.id + '/comments', function(comments){
+			for(j = 0; j < comments.length; j++){
+				var body = comments[j].body.replace(/@(\w|-)+:/, '');
+				if(body.length < 10){ continue; }
+
+				jQuery.post('http://apib2.semetric.com/sentiment?token=' + musicMetricId, body, function(result){
+					var score = result.response.score;
+					scores.push(score);
+					$('p.sentiment').html('Sentiment score ' + mean(scores) + ' from ' + scores.length + ' comments');
+				});
+			};
+		});
+		jQuery('#tracks').append('</div>');
 	});
 });
