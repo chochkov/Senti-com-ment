@@ -40,8 +40,3 @@ module Speak
     config.filter_parameters += [:password]
   end
 end
-
-SOUNDCLOUD_CLIENT_ID     = '04df9516bbfee46412635475e23944f6'
-SOUNDCLOUD_CLIENT_SECRET = 'ddacc8a54c25873c92a342b888df72da'
-
-MUSICMETRIC_ID           = 'a690d6c4892111e0ba8f00163e499d92'
