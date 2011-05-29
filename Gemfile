@@ -9,6 +9,7 @@ gem 'rake', '~> 0.8.7'
 gem 'haml'
 gem 'jberkel-mysql-ruby'
 gem 'soundcloud'
+gem 'rest-client'
 
 # Use unicorn as the web server
 # gem 'unicorn'

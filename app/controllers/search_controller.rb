@@ -7,5 +7,6 @@ class SearchController < ApplicationController
 
   def post
     Search.create(:term => params[:search][:term], :ip => request.ip)
+    redirect_to :action => :index
   end
 end
